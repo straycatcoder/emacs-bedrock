@@ -11,6 +11,8 @@
   ;; Add all your customizations prior to loading the themes
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil)
+  ;; set which themes to toggle
+  (setq modus-themes-to-toggle '(modus-operandi-tritanopia modus-vivendi-tritanopia))
 
   ;; Maybe define some palette overrides, such as by using our presets
 
