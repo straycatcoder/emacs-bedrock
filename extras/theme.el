@@ -1,6 +1,9 @@
 
 ;; set up default font
-(set-frame-font "Monaco 14" nil t)
+(if (x-list-fonts "Monaco")
+    (set-frame-font "Monaco 14" nil t)
+  (set-frame-font "RobotoMono Nerd Font 14" nil t))
+  
 
 ;; Modus themes
 ;; https://protesilaos.com/emacs/modus-themes
