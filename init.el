@@ -152,6 +152,16 @@ If the new path's directories does not exist, create them."
 (blink-cursor-mode -1)                                ; Steady cursor
 (pixel-scroll-precision-mode)                         ; Smooth scrolling
 
+;;Smooth scroll-up/down (C-v / M-v)
+(use-package pixel-scroll
+  :bind
+  ([remap scroll-up-command]   . pixel-scroll-interpolate-down)
+  ([remap scroll-down-command] . pixel-scroll-interpolate-up)
+  :custom
+  (pixel-scroll-precision-interpolate-page t)
+  :init
+  (pixel-scroll-precision-mode 1))
+
 ;; Use common keystrokes by default
 ;(cua-mode)
 
