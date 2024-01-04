@@ -139,15 +139,17 @@
            "* TODO %?\n%U\n%i")
           ;; Capture and keep an org-link to the thing we're currently working with
           ("r" "Capture with Reference" entry (file "inbox.org")
-           "* TODO %?\n%U\n%i\n%a")
+           "* TODO %? %^G")
           ;; Define a section
           ("w" "Work")
           ("wp" "Work projects" entry (file+headline "work.org" "Projects")
-           "** TODO %?")          
+           "** TODO %^{to-do} %^g")          
           ("wm" "Work meeting" entry (file+headline "work.org" "Meetings")
-           "** TODO %?")
+           "** TODO %^{meeting} %^g")
+          ("wm" "Work admin task" entry (file+headline "work.org" "Admin Tasks")
+           "** TODO %^{admin_task}")
           ("wr" "Work report" entry (file+headline "work.org" "Reports")
-           "** TODO %?")))
+           "** TODO %^{report} %^g")))
 
     (setq org-agenda-custom-commands
           '(("n" "Agenda and All Todos"
