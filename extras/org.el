@@ -41,10 +41,11 @@
 ;;; Phase 2 variables
 
 ;; Agenda variables
-(setq org-directory "~/Documents/org/") ; Non-absolute paths for agenda and
+(setq org-directory "~/Documents/Dropbox/Orgfiles/agenda") ; Non-absolute paths for agenda and
                                         ; capture templates will look here.
+(setq org-default-notes-file "inbox.org")
 
-(setq org-agenda-files '("inbox.org" "work.org"))
+(setq org-agenda-files '("inbox.org" "work.org" "personal.org"))
 
 ;; Default tags
 (setq org-tag-alist '(
@@ -72,16 +73,16 @@
 ;;; Phase 3 variables
 
 ;; Org-roam variables
-(setq org-roam-directory "~/Documents/org-roam/")
-(setq org-roam-index-file "~/Documents/org-roam/index.org")
+;; (setq org-roam-directory "~/Documents/org-roam/")
+;; (setq org-roam-index-file "~/Documents/org-roam/index.org")
 
 ;;; Optional variables
 
 ;; Advanced: Custom link types
 ;; This example is for linking a person's 7-character ID to their page on the
 ;; free genealogy website Family Search.
-(setq org-link-abbrev-alist
-      '(("family_search" . "https://www.familysearch.org/tree/person/details/%s")))
+;; (setq org-link-abbrev-alist
+;;       '(("family_search" . "https://www.familysearch.org/tree/person/details/%s")))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
@@ -94,9 +95,15 @@
          (org-mode . flyspell-mode))    ; spell checking!
 
   :bind (:map global-map
-              ("C-c l s" . org-store-link)          ; Mnemonic: link → store
-              ("C-c l i" . org-insert-link-global)) ; Mnemonic: link → insert
+              ("C-c l" . org-store-link)          ; Mnemonic: link → store
+              ("C-c a" . org-agenda) ; open agenda
+              ("C-c c" . org-capture)) ; org-capture
+
   :config
+  (setq org-support-shift-select 'always)
+  (setq org-adapt-indentation t)
+  (setq org-agenda-skip-scheduled-if-done t)
+  (setq org-log-into-drawer t)
   (require 'oc-csl)                     ; citation support
   (add-to-list 'org-export-backends 'md)
 
@@ -135,10 +142,12 @@
            "* TODO %?\n%U\n%i\n%a")
           ;; Define a section
           ("w" "Work")
+          ("wp" "Work projects" entry (file+headline "work.org" "Projects")
+           "** TODO %?")          
           ("wm" "Work meeting" entry (file+headline "work.org" "Meetings")
-           "** TODO %?\n%U\n%i\n%a")
+           "** TODO %?")
           ("wr" "Work report" entry (file+headline "work.org" "Reports")
-           "** TODO %?\n%U\n%i\n%a")))
+           "** TODO %?")))
 
     (setq org-agenda-custom-commands
           '(("n" "Agenda and All Todos"
@@ -153,17 +162,17 @@
 ;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package org-roam
-  :ensure t
-  :config
-  (org-roam-db-autosync-mode)
-  ;; Dedicated side window for backlinks
-  (add-to-list 'display-buffer-alist
-               '("\\*org-roam\\*"
-                 (display-buffer-in-side-window)
-                 (side . right)
-                 (window-width . 0.4)
-                 (window-height . fit-window-to-buffer))))
+;; (use-package org-roam
+;;   :ensure t
+;;   :config
+;;   (org-roam-db-autosync-mode)
+;;   ;; Dedicated side window for backlinks
+;;   (add-to-list 'display-buffer-alist
+;;                '("\\*org-roam\\*"
+;;                  (display-buffer-in-side-window)
+;;                  (side . right)
+;;                  (window-width . 0.4)
+;;                  (window-height . fit-window-to-buffer))))
 
 ;; Pretty web interface for org-roam
 ;(use-package org-roam-ui
