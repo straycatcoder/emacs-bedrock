@@ -165,11 +165,11 @@
         ))
 
     (setq org-agenda-custom-commands
-          '(("n" "Agenda and All Todos"
-             ((agenda)
-              (todo)))
-            ("w" "Work" agenda ""
-             ((org-agenda-files '("work.org")))))))
+          '(
+            ("n" "Agenda and All Todos"  ((agenda) (todo)))
+            ("w" "Work" agenda "" ((org-agenda-files '("work.org"))))
+            ("p" "Personal" agenda "" ((org-agenda-files '("personal.org"))))
+            )))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
