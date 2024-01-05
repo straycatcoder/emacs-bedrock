@@ -149,7 +149,20 @@
           ("wm" "Work admin task" entry (file+headline "work.org" "Admin Tasks")
            "** TODO %^{admin_task}")
           ("wr" "Work report" entry (file+headline "work.org" "Reports")
-           "** TODO %^{report} %^g")))
+           "** TODO %^{report} %^g")
+        ;; Define a section
+        ("p" "Personal")
+          ("pr" "Reading" entry (file+headline "personal.org" "Readings")
+           "** TODO %^{to-do} %^g")
+          ("pr" "Hobby" entry (file+headline "personal.org" "Hobbies")
+           "** TODO %^{to-do} %^g")
+          ("pw" "Reading" entry (file+headline "personal.org" "Writings")
+           "** TODO %^{to-do} %^g")
+          ("ps" "Stock" entry (file+headline "personal.org" "Stocks")
+           "** TODO %^{to-do} %^g")
+          ("pc" "Coding" entry (file+headline "personal.org" "Codings")
+           "** TODO %^{to-do} %^g")
+        ))
 
     (setq org-agenda-custom-commands
           '(("n" "Agenda and All Todos"
