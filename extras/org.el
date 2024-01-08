@@ -128,7 +128,17 @@
   ;; Instead of just two states (TODO, DONE) we set up a few different states
   ;; that a task can be in.
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "WAITING(w@/!)" "STARTED(s!)" "|" "DONE(d!)" "OBSOLETE(o@)")))
+        '((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "ONGOING(o!)" "HOLD(h@/i)" "|" "DONE(d!)" "CANCELLED(o@)")))
+  ;; set keyword color
+  (setq org-todo-keyword-faces
+      (quote (;("TODO" :foreground "red" :weight bold)
+              ("NEXT" :foreground "blue" :weight bold)
+              ("ONGOING" :foreground "lime green" :weight bold)
+              ;("DONE" :foreground "forest green" :weight bold)
+              ("WAITING" :foreground "orange" :weight bold)
+              ;("HOLD" :foreground "magenta" :weight bold)
+              ("CANCELLED" :foreground "forest green" :weight bold))))
+
 
   ;; Refile configuration
   (setq org-outline-path-complete-in-steps nil)
@@ -169,6 +179,9 @@
             ("n" "Agenda and All Todos"  ((agenda) (todo)))
             ("w" "Work" agenda "" ((org-agenda-files '("work.org"))))
             ("p" "Personal" agenda "" ((org-agenda-files '("personal.org"))))
+            ("r" "Next 10 days" ((agenda "" ((org-agenda-span 10)
+                                             (org-agenda-start-day "0d")
+                                              (org-agenda-start-on-weekday nil)))))
             )))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
