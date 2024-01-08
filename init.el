@@ -76,6 +76,11 @@ If the new path's directories does not exist, create them."
     backupFilePath))
 (setopt make-backup-file-name-function 'bedrock--backup-file-name)
 
+;; spell mode
+(require 'flyspell)
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
 ;;;   Discovery aids
@@ -235,6 +240,9 @@ If the new path's directories does not exist, create them."
 ;; UI/UX enhancements mostly focused on minibuffer and autocompletion interfaces
 ;; These ones are *strongly* recommended!
 (load-file (expand-file-name "extras/base.el" user-emacs-directory))
+
+;; Online packages; AI and Social
+(load-file (expand-file-name "extras/online.el" user-emacs-directory))
 
 ;; Packages for software development
 ;(load-file (expand-file-name "extras/dev.el" user-emacs-directory))
