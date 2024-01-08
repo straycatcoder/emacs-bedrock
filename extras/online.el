@@ -20,4 +20,5 @@
 ;; https://github.com/karthink/gptel
 (use-package gptel
   :ensure t)
+;; it seems chatgpt api is not free any more
 
