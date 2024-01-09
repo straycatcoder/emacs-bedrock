@@ -15,8 +15,11 @@
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown"))
 
+;; https://github.com/s-kostyaev/ellama
 (use-package ellama
-  :ensure t)
+  :init
+  (setq ellama-auto-scroll t))
+
 (require 'llm-ollama)
     (setopt ellama-provider
 		  (make-llm-ollama
