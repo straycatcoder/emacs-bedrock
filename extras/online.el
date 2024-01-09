@@ -14,3 +14,10 @@
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown"))
+
+(use-package ellama
+  :ensure t)
+(require 'llm-ollama)
+    (setopt ellama-provider
+		  (make-llm-ollama
+		   :chat-model "solar" :embedding-model "solar"))
