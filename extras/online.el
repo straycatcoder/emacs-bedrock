@@ -9,16 +9,8 @@
         mastodon-active-user "cyberpoker98"
         mastodon-toot-display-orig-in-reply-buffer t))
 
-;; markdown mode for gptel
 ;; https://jblevins.org/projects/markdown-mode/
 (use-package markdown-mode
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
   :init (setq markdown-command "multimarkdown"))
-
-;; gptel
-;; https://github.com/karthink/gptel
-(use-package gptel
-  :ensure t)
-;; it seems chatgpt api is not free any more
-
