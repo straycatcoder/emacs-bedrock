@@ -198,6 +198,11 @@ If the new path's directories does not exist, create them."
 ;; escape quit on the first press
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
+;; focus on new window after split
+;; https://stackoverflow.com/a/6465415
+(global-set-key "\C-x2" (lambda () (interactive)(split-window-vertically) (other-window 1)))
+(global-set-key "\C-x3" (lambda () (interactive)(split-window-horizontally) (other-window 1)))
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;
