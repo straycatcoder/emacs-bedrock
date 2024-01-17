@@ -185,7 +185,9 @@ If the new path's directories does not exist, create them."
   (mapc (lambda (hook) (add-hook hook 'hl-line-mode)) hl-line-hooks))
 
 ;; No frame title for mac, code works in a weird way
-(setq frame-title-format  nil)
+;; https://ismailefe.org/blog/eye-candy/ not working here
+;(setq ns-use-proxy-icon nil)
+(setq frame-title-format nil)
 (tool-bar-mode)
 (tool-bar-mode -1)
 
