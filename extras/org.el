@@ -211,3 +211,17 @@
 ;        org-roam-ui-follow t
 ;        org-roam-ui-update-on-save t
 ;        org-roam-ui-open-on-start t))
+
+;; denote
+(use-package denote
+  :ensure t
+  :bind
+  ("C-c n n" . 'denote)
+  :init
+  (setq denote-directory "~/Documents/Dropbox/Orgfiles/notes")
+  :config
+  (setq denote-known-keywords '("emacs","stocks"))
+  (setq denote-infer-keywords t)
+  (setq denote-sort-keywords t)
+  (setq denote-file-type nil) ; Org is the default, set others here
+  (setq denote-prompts '(subdirectory title keywords)))
