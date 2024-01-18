@@ -42,6 +42,7 @@
 
 ;(setopt initial-major-mode 'fundamental-mode)  ; default mode for the *scratch* buffer
 (setopt initial-major-mode 'org-mode)  ; default mode for the *scratch* buffer
+(setopt initial-scratch-message "# Scratch buffer for: org-mode\n\n")
 (setopt display-time-default-load-average nil) ; this information is useless for most
 
 ;; Automatically reread from disk if the underlying file changes
