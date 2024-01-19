@@ -220,7 +220,8 @@ If the new path's directories does not exist, create them."
 ;; Add the time to the tab-bar, if visible
 (add-to-list 'tab-bar-format 'tab-bar-format-align-right 'append)
 (add-to-list 'tab-bar-format 'tab-bar-format-global 'append)
-(setopt display-time-format "%a %F %R")
+;(setopt display-time-format "%a %F %R")
+(setopt display-time-format "%R")
 ;(setopt display-time-interval 1)
 (display-time-mode)
 
