@@ -23,3 +23,16 @@
   (load-theme 'modus-operandi-tritanopia :no-confirm)
 
   (define-key global-map (kbd "<f5>") #'modus-themes-toggle))
+
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode)
+  :config
+  (setq doom-modeline-buffer-modification-icon nil)
+  (setq doom-modeline-buffer-file-name-style 'relative-from-project)
+  (doom-modeline-def-modeline 'my-simple-line
+    '(matches buffer-info remote-host buffer-position selection-info)
+    '(misc-info minor-modes input-method process vcs checker major-mode))
+  (defun setup-custom-doom-modeline ()
+    (doom-modeline-set-modeline 'my-simple-line 'default))
+  (add-hook 'doom-modeline-mode-hook 'setup-custom-doom-modeline))
