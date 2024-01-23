@@ -24,6 +24,7 @@
 
   (define-key global-map (kbd "<f5>") #'modus-themes-toggle))
 
+;; need to install the font: M-x nerd-icons-install-fonts
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
