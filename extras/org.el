@@ -104,6 +104,7 @@
   (setq org-adapt-indentation t)
   (setq org-agenda-skip-scheduled-if-done t)
   (setq org-log-into-drawer t)
+  (setq org-blank-before-new-entry '((heading . t) (plain-list-item . auto)))  ;; add a blank line 
   (require 'oc-csl)                     ; citation support
   (add-to-list 'org-export-backends 'md)
 
