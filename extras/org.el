@@ -169,7 +169,7 @@
            "** TODO %^{to-do} %^g")
           ("pw" "Writing" entry (file+headline "personal.org" "Writing")
            "** TODO %^{to-do} %^g")
-          ("ps" "Stock" entry (file+headline "personal.org" "Stocks")
+          ("po" "Others" entry (file+headline "personal.org" "Others")
            "** TODO %^{to-do} %^g")
           ("pc" "Coding" entry (file+headline "personal.org" "Coding")
            "** TODO %^{to-do} %^g")
