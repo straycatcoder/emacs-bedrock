@@ -277,10 +277,14 @@ If the new path's directories does not exist, create them."
 
 ;; -----------temporary----------------
 
-;; lisp mode
-(load (expand-file-name "~/quicklisp/slime-helper.el"))
-;; Replace "sbcl" with the path to your implementation
-(setq inferior-lisp-program "sbcl")
+(if (eq system-type 'gnu/linux)
+    (progn
+      ;; lisp mode
+      (load (expand-file-name "~/quicklisp/slime-helper.el"))
+      ;; Replace "sbcl" with the path to your implementation
+      (setq inferior-lisp-program "sbcl")
+      )
+)
 
 ;; ------------------------------------
 
