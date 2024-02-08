@@ -157,8 +157,8 @@
            "** TODO %^{to-do} %^g")          
           ("wm" "Work meeting" entry (file+headline "work.org" "Meetings")
            "** TODO %^{meeting} %^g")
-          ("wm" "Work admin task" entry (file+headline "work.org" "Administrative Tasks")
-           "** TODO %^{admin_task}")
+          ("wa" "Work admin task" entry (file+headline "work.org" "Administrative Tasks")
+           "** TODO %^{admin_task} %^g")
           ("wr" "Work report" entry (file+headline "work.org" "Reports")
            "** TODO %^{report} %^g")
         ;; Define a section
