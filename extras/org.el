@@ -129,7 +129,7 @@
   ;; Instead of just two states (TODO, DONE) we set up a few different states
   ;; that a task can be in.
   (setq org-todo-keywords
-        '((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "ONGOING(o!)" "HOLD(h@/i)" "|" "DONE(d!)" "CANCELLED(o@)")))
+        '((sequence "TODO(t)" "NEXT(n)" "WAITING(w@/!)" "ONGOING(o!)" "HOLD(h@/i)" "|" "DONE(d!)" "CANCELLED(c@)")))
   ;; set keyword color
   (setq org-todo-keyword-faces
       (quote (;("TODO" :foreground "red" :weight bold)
