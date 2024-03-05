@@ -15,12 +15,12 @@
   (setq modus-themes-italic-constructs t
         modus-themes-bold-constructs nil)
   ;; set which themes to toggle
-  (setq modus-themes-to-toggle '(modus-operandi-tritanopia modus-vivendi-tritanopia))
+  (setq modus-themes-to-toggle '(modus-operandi-tinted modus-vivendi-tinted))
 
   ;; Maybe define some palette overrides, such as by using our presets
 
   ;; Load the theme of your choice.
-  (load-theme 'modus-operandi-tritanopia :no-confirm)
+  (load-theme 'modus-operandi-tinted :no-confirm)
 
   (define-key global-map (kbd "<f5>") #'modus-themes-toggle))
 
