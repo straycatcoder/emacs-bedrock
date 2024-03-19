@@ -33,7 +33,7 @@
   (setq doom-modeline-buffer-file-name-style 'relative-from-project)
   (doom-modeline-def-modeline 'my-simple-line
     '(time matches buffer-info remote-host buffer-position selection-info)
-    '(misc-info minor-modes input-method process vcs checker major-mode))
+    '(misc-info minor-modes input-method process vcs  major-mode))
   (defun setup-custom-doom-modeline ()
     (doom-modeline-set-modeline 'my-simple-line 'default))
   (add-hook 'doom-modeline-mode-hook 'setup-custom-doom-modeline))
