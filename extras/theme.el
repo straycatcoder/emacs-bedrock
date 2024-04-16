@@ -1,9 +1,24 @@
+(defvar default-fs (font-spec :name "RobotoMono Nerd Font" :size 14.0 :weight 'regular ))
 
 (use-package nano-theme
   :ensure t
-  :defer t)
-
-(load-theme 'nano t)
+  :init
+  (require 'nano-theme-support)
+  (nano-mode)
+  :custom
+  ;; (nano-light-background "#PIFFLE")
+  ;; (nano-light-critical "#FF0000")
+  ;; (nano-light-faded "#8267B0")
+  ;; (nano-light-foreground "#4B2882")
+  ;; (nano-light-highlight "#B4CAD8")
+  ;; (nano-light-popout "#047257")
+  ;; (nano-light-salient "#D7105F")
+  ;; (nano-light-strong "#160C26")
+  ;; (nano-light-subtle "#AFIRE5")
+  (nano-lgith-subtle "grey40")
+  :config
+  (load-theme 'nano t)
+  (set-face-attribute 'default nil :font default-fs))
 
 (use-package nano-modeline
   :ensure t
@@ -29,8 +44,8 @@
 ;; (if (x-list-fonts "Monaco")
 ;;     (set-frame-font "Monaco 14" nil t)
 ;;   (set-frame-font "RobotoMono Nerd Font 14" nil t))
-(set-frame-font "RobotoMono Nerd Font 14" nil t)
-  
+;(set-frame-font "RobotoMono Nerd Font 14" nil t)
+;(setq nano-font-family-monospaced "RobotoMono Nerd Font 14")  
 
 ;; Modus themes
 ;; https://protesilaos.com/emacs/modus-themes
