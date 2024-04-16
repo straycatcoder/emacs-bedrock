@@ -11,7 +11,7 @@
   ;; (nano-light-faded "#8267B0")
   ;; (nano-light-foreground "#4B2882")
   ;; (nano-light-highlight "#B4CAD8")
-  ;; (nano-light-popout "#047257")
+  (nano-light-popout "#047257")
   ;; (nano-light-salient "#D7105F")
   ;; (nano-light-strong "#160C26")
   ;; (nano-light-subtle "#AFIRE5")
@@ -19,6 +19,9 @@
   :config
   (load-theme 'nano t)
   (set-face-attribute 'default nil :font default-fs))
+
+;; reduce the border width from nano-mode
+(setq default-frame-alist '( (internal-border-width . 10)))
 
 (use-package nano-modeline
   :ensure t
