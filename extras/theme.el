@@ -1,3 +1,4 @@
+;; https://github.com/rougier/nano-theme/issues/50#issuecomment-1791410945
 (defvar default-fs (font-spec :name "RobotoMono Nerd Font" :size 14.0 :weight 'regular ))
 
 (use-package nano-theme
