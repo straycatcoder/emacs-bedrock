@@ -16,7 +16,7 @@
   ;; (nano-light-salient "#D7105F")
   ;; (nano-light-strong "#160C26")
   ;; (nano-light-subtle "#AFIRE5")
-  (nano-lgith-subtle "grey40")
+  (nano-light-subtle "light steel blue")
   :config
   (load-theme 'nano t)
   (set-face-attribute 'default nil :font default-fs))
