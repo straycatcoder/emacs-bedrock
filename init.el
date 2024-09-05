@@ -275,6 +275,9 @@ If the new path's directories does not exist, create them."
 ;; Tools for academic researchers
 ;(load-file (expand-file-name "extras/researcher.el" user-emacs-directory))
 
+;; another note taking package howm
+(load-file (expand-file-name "extras/howm.el" user-emacs-directory))
+
 ;; -----------temporary----------------
 
 (if (eq system-type 'gnu/linux)
